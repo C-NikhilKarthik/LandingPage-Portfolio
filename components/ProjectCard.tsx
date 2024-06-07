@@ -13,10 +13,10 @@ interface projectType {
 
 interface ProjectCardProps {
   item: projectType;
-  key: number;
+  uniqueKey: number;
 }
 
-export default function ProjectCard({ item, key }: ProjectCardProps) {
+export default function ProjectCard({ item, uniqueKey }: ProjectCardProps) {
   const firstText = useRef(null);
   const secondText = useRef(null);
   const slider = useRef(null);
@@ -52,7 +52,7 @@ export default function ProjectCard({ item, key }: ProjectCardProps) {
   };
   return (
     <div
-      key={key}
+      key={uniqueKey}
       className="rounded overflow-hidden h-[75vh] w-full relative flex p-4 bg-fixed bg-cover bg-center"
       style={{ backgroundImage: `url(${item?.src})` }}
     >

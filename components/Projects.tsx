@@ -45,7 +45,7 @@ export default function Projects() {
       </div>
       <div className="w-full h-[2px] rounded bg-[#C7C7CC]" />
       {selectedProjects?.map((item) => (
-        <ProjectCard key={item?.id} item={item} />
+        <ProjectCard uniqueKey={item?.id} key={item?.id} item={item} />
       ))}
     </section>
   );

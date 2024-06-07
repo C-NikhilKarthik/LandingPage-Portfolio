@@ -46,8 +46,12 @@ export default function CodeZoom() {
         anticipatePin: 1,
         // toggleActions: "restart pause reverse pause",
         pinSpacing: "50%",
-        end: () =>
-          "+=" + document?.querySelector("#main-section")?.offsetHeight / 2,
+        end: () => {
+          const mainSection = document.querySelector(
+            "#main-section"
+          ) as HTMLElement;
+          return "+=" + (mainSection?.offsetHeight ?? 0) / 2;
+        },
         scrub: 3,
       });
     });
