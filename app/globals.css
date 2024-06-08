@@ -33,6 +33,10 @@ body {
   }
 }
 
+.apple-device {
+  background-attachment: scroll !important;
+}
+
 .img {
   block-size: auto;
   background-repeat: no-repeat;

@@ -50,10 +50,21 @@ export default function ProjectCard({ item, uniqueKey }: ProjectCardProps) {
     requestAnimationFrame(animate);
     xPercent += 0.06 * direction;
   };
+
+  useEffect(() => {
+    const isAppleDevice =
+      /iPad|iPhone|iPod/.test(navigator.userAgent) && !(window as any).MSStream;
+
+    if (isAppleDevice) {
+      document?.getElementById("project")?.classList.add("apple-device");
+    }
+  }, []);
+
   return (
     <div
       key={uniqueKey}
-      className="rounded overflow-hidden h-[75dvh] w-full relative flex p-4 bg-fixed bg-[length:auto_100%] md:bg-[length:100%_auto] bg-no-repeat bg-center"
+      id="project"
+      className="rounded overflow-hidden h-[75dvh] w-full relative flex p-4 bg-fixed bg-cover bg-center"
       style={{ backgroundImage: `url(${item?.src})` }}
     >
       <div className="absolute top-4 left-4 flex gap-4">
