@@ -7,6 +7,8 @@ import CodeZoom from "@/components/CodeZoom";
 import Footer from "@/components/Footer";
 import ContactUs from "@/components/ContactUs";
 import Projects from "@/components/Projects";
+import Detail from "@/components/Detail";
+import Worked from "@/components/Worked";
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
@@ -30,6 +32,8 @@ export default function Home() {
         {isLoading && <Preloader />}
       </AnimatePresence>
       <Landing />
+      <Detail />
+      <Worked />
       <CodeZoom />
       <Projects />
       <ContactUs />
