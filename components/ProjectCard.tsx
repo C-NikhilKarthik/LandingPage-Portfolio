@@ -56,15 +56,17 @@ export default function ProjectCard({ item, uniqueKey }: ProjectCardProps) {
       /iPad|iPhone|iPod/.test(navigator.userAgent) && !(window as any).MSStream;
 
     if (isAppleDevice) {
-      document?.getElementById("project")?.classList.add("apple-device");
+      const projectElements = document.getElementsByClassName("projects");
+      Array.from(projectElements).forEach((element) => {
+        element.classList.add("apple-device");
+      });
     }
   }, []);
 
   return (
     <div
       key={uniqueKey}
-      id="project"
-      className="rounded overflow-hidden h-[75dvh] w-full relative flex p-4 bg-fixed bg-cover bg-center"
+      className="rounded overflow-hidden h-[75dvh] projects w-full relative flex p-4 bg-fixed bg-cover bg-center"
       style={{ backgroundImage: `url(${item?.src})` }}
     >
       <div className="absolute top-4 left-4 flex gap-4">
