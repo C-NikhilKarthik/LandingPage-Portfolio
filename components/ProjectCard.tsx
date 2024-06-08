@@ -53,7 +53,7 @@ export default function ProjectCard({ item, uniqueKey }: ProjectCardProps) {
   return (
     <div
       key={uniqueKey}
-      className="rounded overflow-hidden h-[75vh] w-full relative flex p-4 bg-fixed bg-cover bg-center"
+      className="rounded overflow-hidden h-[75dvh] w-full relative flex p-4 bg-fixed bg-[length:auto_100%] md:bg-[length:100%_auto] bg-no-repeat bg-center"
       style={{ backgroundImage: `url(${item?.src})` }}
     >
       <div className="absolute top-4 left-4 flex gap-4">

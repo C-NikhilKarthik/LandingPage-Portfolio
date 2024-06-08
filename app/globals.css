@@ -24,7 +24,7 @@ body {
 }
 
 .scroll {
-  animation: scroll 10s reverse linear infinite;
+  animation: scroll 20s reverse linear infinite;
 }
 
 @keyframes scroll {
@@ -41,6 +41,7 @@ body {
   font-style: italic;
   vertical-align: middle;
   max-inline-size: none;
+  height: 2.5rem;
   width: auto;
 }
 
