@@ -9,6 +9,8 @@ import ContactUs from "@/components/ContactUs";
 import Projects from "@/components/Projects";
 import Detail from "@/components/Detail";
 import Worked from "@/components/Worked";
+import Creative from "@/components/Creative";
+import SkillSet from "@/components/SkillSet";
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
@@ -32,8 +34,9 @@ export default function Home() {
         {isLoading && <Preloader />}
       </AnimatePresence>
       <Landing />
-      <Detail />
-      <Worked />
+      <SkillSet />
+      {/* <Worked /> */}
+      <Creative />
       <CodeZoom />
       <Projects />
       <ContactUs />
