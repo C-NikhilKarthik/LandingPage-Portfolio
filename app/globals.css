@@ -8,6 +8,10 @@
   font-family: "Manrope", sans-serif;
 }
 
+html {
+  scrollbar-width: none;
+}
+
 @font-face {
   font-family: Media;
   src: url("/fonts/mediasanssemicondensed.otf") format("opentype");

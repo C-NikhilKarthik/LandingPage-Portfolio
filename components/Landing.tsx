@@ -59,22 +59,22 @@ export default function Landing() {
         <div className="text-2xl font-semibold">Alex Smith</div>
         <div className="md:flex hidden gap-8 items-center">
           <Link
-            href={"/"}
+            href={"#skills"}
             className="text-sm translate-y-0 hover:-translate-y-1 transition-all duration-300"
           >
-            Design
+            Skills
           </Link>
           <Link
-            href={"/"}
+            href={"#about"}
             className="text-sm translate-y-0 hover:-translate-y-1 transition-all duration-300"
           >
             About
           </Link>
           <Link
-            href={"/"}
+            href={"#works"}
             className="text-sm translate-y-0 hover:-translate-y-1 transition-all duration-300"
           >
-            Design
+            Works
           </Link>
           <Link
             href={"/"}

@@ -37,7 +37,10 @@ export default function Creative() {
   }, []);
 
   return (
-    <section className="w-full font-manrope gap-24 py-40 flex flex-col px-2 md:px-24 relative">
+    <section
+      id="about"
+      className="w-full font-manrope gap-24 py-40 flex flex-col px-2 md:px-24 relative overflow-hidden"
+    >
       <p className="max-w-[36ch] text-[#68727D] block">
         I&apos;ve worked in UI design and front-end development, so I can
         understand designs well and builds effective communication between team

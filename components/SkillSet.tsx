@@ -2,47 +2,78 @@ import Image from "next/image";
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { useDrag } from "@use-gesture/react";
+import { skill } from "@/types/skills";
 
-const skills = [
+const skills: skill[] = [
   {
     img: "/icons/icon-js.svg",
     name: "js",
+    header: "JavaScript",
+    description:
+      "I bring websites to life with JavaScript, adding interactive features and optimizing performance with clean and efficient code.",
   },
   {
     img: "/icons/icon-css.svg",
     name: "css",
+    header: "CSS",
+    description:
+      "I prioritize pixel perfection, paying close attention to details for visually polished and precisely aligned designs, ensuring a seamless user experience.",
   },
   {
     img: "/icons/icon-html.svg",
     name: "html",
+    header: "HTML",
+    description:
+      "Beyond markup, HTML is crucial for an inclusive web. I structure content carefully for universal accessibility.",
   },
   {
     img: "/icons/icon-react.svg",
     name: "react",
+    header: "React JS",
+    description:
+      "Using React, I craft scalable user interfaces with components, state management, and virtual DOM manipulation for seamless web applications.",
   },
   {
     img: "/icons/icon-gsap.svg",
     name: "gsap",
+    header: "GSAP",
+    description:
+      "I use GSAP for captivating animations that bring web pages to life, enhancing the overall user experience.",
   },
   {
     img: "/icons/icon1.svg",
     name: "icon1",
+    header: "Page Speed",
+    description:
+      "I specialize in enhancing website performance, ensuring fast loading times and efficient resource utilization for an optimal user experience.",
   },
   {
     img: "/icons/icon-api.svg",
     name: "api",
+    header: "REST APIs",
+    description:
+      "I integrate data and functionality seamlessly with REST APIs, creating dynamic web applications for enhanced performance.",
   },
   {
     img: "/icons/icon-figma.svg",
     name: "figma",
+    header: "Figma",
+    description:
+      "While not a full-time UI designer, I have an eye for aesthetics, creating visually appealing and user-friendly interfaces.",
   },
   {
     img: "/icons/icon-optimization.svg",
     name: "optimization",
+    header: "Accessibility",
+    description:
+      "Accessibility is a must. I ensure everyone can use what I create, focusing on keyboard navigation and screen reader compatibility.",
   },
   {
     img: "/icons/icon-webpack.svg",
     name: "webpack",
+    header: "WebPack",
+    description:
+      "I use tools like Webpack, Vite, Parcel, or Gulp to streamline workflows, automating development for efficiency.",
   },
 ];
 
@@ -58,13 +89,25 @@ export default function SkillSet() {
   });
 
   return (
-    <section className="flex relative w-full py-40 px-6 lg:px-24 flex-col">
+    <section
+      id="skills"
+      className="flex relative w-full py-40 px-6 lg:px-24 overflow-x-clip flex-col"
+    >
       <div className="flex flex-col text-[clamp(3rem,16dvw,5rem)] leading-[1.1] text-white">
         <p className="opacity-50">My</p>
         <p>Skillset</p>
       </div>
 
       <div {...bind()} className="circular-carousel">
+        <div className="flex absolute left-1/2 bottom-4 text-center -translate-x-1/2 -translate-y-1/2 flex-col gap-6 max-w-[400px]">
+          <div className="text-white text-[clamp(24px,3vw,36px)] font-semibold">
+            {skills[Math.abs(rotation % 360) / 36]?.header}
+          </div>
+          <div className="text-slate-400">
+            {skills[Math.abs(rotation % 360) / 36]?.description}
+          </div>
+        </div>
+
         <motion.div
           className="Card transition-all duration-[1000ms] ease-in-out"
           style={{ rotate: `${rotation}deg` }}
@@ -83,6 +126,7 @@ export default function SkillSet() {
               style={{ touchAction: "none" }}
             ></path>
           </svg>
+
           {skills.map((item, index) => {
             const angle =
               (180 / (skills.length / 2)) * (index % (skills.length / 2));
@@ -95,7 +139,7 @@ export default function SkillSet() {
                     angle + offset
                   }deg) translate(calc(var(--circSize) / 2))`,
                 }}
-                className="skill-item rounded absolute cursor-grab w-[var(--cardSize)] aspect-square bg-slate-100 flex items-center justify-center"
+                className="skill-item rounded absolute pointer-events-auto cursor-grab w-[var(--cardSize)] aspect-square bg-white backdrop-blur shadow-[inset_5px_10px_30px_10px_rgba(148,163,184,0.5)] flex items-center justify-center"
               >
                 <Image
                   height={80}
@@ -156,7 +200,7 @@ export default function SkillSet() {
         </div>
       </div>
 
-      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[16dvw] aspect-square">
+      <div className="absolute bottom-0 translate-y-1/2 left-1/2 -translate-x-1/2 w-[16dvw] aspect-square">
         <div className="purple-ball"></div>
       </div>
     </section>

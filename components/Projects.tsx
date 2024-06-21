@@ -39,7 +39,7 @@ const selectedProjects = [
 
 export default function Projects() {
   return (
-    <section className="flex flex-col w-full gap-4 px-4 pt-16">
+    <section id="works" className="flex flex-col w-full gap-4 px-4 pt-16">
       <div className="text-[clamp(36px,6vw,60px)] font-bold uppercase text-[#C7C7CC]">
         Selected works
       </div>
