@@ -13,6 +13,16 @@ html {
 }
 
 @font-face {
+  font-family: SF Pro;
+  src: url("/fonts/SFPRODISPLAYMEDIUM.otf") format("opentype");
+}
+
+@font-face {
+  font-family: Tangerine;
+  src: url("/fonts/tangerine.regular.ttf") format("truetype");
+}
+
+@font-face {
   font-family: Media;
   src: url("/fonts/mediasanssemicondensed.otf") format("opentype");
 }
@@ -59,6 +69,16 @@ body {
   width: auto;
 }
 
+.horizontal-scroll::-webkit-scrollbar {
+  background-color: transparent;
+  padding: 1rem;
+}
+
+.horizontal-scroll::-webkit-scrollbar-thumb {
+  background-color: #e4e4e4;
+  border-radius: 1rem;
+}
+
 body {
   margin: 0px;
   overflow-x: hidden;
@@ -68,6 +88,14 @@ body {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+.sf-pro {
+  font-family: SF Pro, sans-serif;
+}
+
+.font-tangerine {
+  font-family: Tangerine, serif;
 }
 
 .title,
@@ -294,4 +322,17 @@ body {
   filter: blur(8rem);
   background: linear-gradient(180deg, rgba(24, 75, 255, 0), #174aff);
   transform: translate(-50%, -50%);
+}
+
+.scroll-content-left {
+  animation: scroll-up 10s reverse linear infinite;
+}
+
+@keyframes scroll-up {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-50%);
+  }
 }

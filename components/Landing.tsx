@@ -16,18 +16,18 @@ export default function Landing() {
                 My name is Alex Smith and I am a freelancer
               </div>
               <div className="relative title">
-                <div className="duration-500 title-main relative tracking-tight left-0 text-[clamp(48px,10vw,180px)] font-semibold">
+                <div className="duration-500 title-main relative left-0 text-[clamp(48px,10vw,180px)]">
                   Webdesigner
                 </div>
-                <div className="absolute top-0 left-0 pointer-events-none tracking-tight z-[4] h1_outline text-[clamp(48px,10vw,180px)] font-semibold">
+                <div className="absolute top-0 left-0 pointer-events-none z-[4] h1_outline text-[clamp(48px,10vw,180px)]">
                   Webdesigner
                 </div>
               </div>
               <div className="relative heading">
-                <div className="duration-500 heading-main relative leading-10 tracking-tighter left-0 text-[clamp(48px,10vw,180px)] font-semibold">
+                <div className="duration-500 heading-main relative leading-10 left-0 text-[clamp(48px,10vw,180px)]">
                   & Photographer
                 </div>
-                <div className="absolute top-0 left-0 pointer-events-none leading-10 tracking-tighter z-[4] h2_outline text-[clamp(48px,10vw,180px)] font-semibold">
+                <div className="absolute top-0 left-0 pointer-events-none leading-10 z-[4] h2_outline text-[clamp(48px,10vw,180px)]">
                   & Photographer
                 </div>
               </div>
@@ -56,25 +56,27 @@ export default function Landing() {
         </div>
       </div>
       <nav className="w-full p-4 md:px-10 lg:px-20 xl:px-44 z-10 text-black flex justify-between items-center absolute top-0 left-0">
-        <div className="text-2xl font-semibold">Alex Smith</div>
+        <Link href={"/"} className="text-2xl font-semibold">
+          Alex Smith
+        </Link>
         <div className="md:flex hidden gap-8 items-center">
           <Link
-            href={"#skills"}
+            href={"/design"}
             className="text-sm translate-y-0 hover:-translate-y-1 transition-all duration-300"
           >
-            Skills
-          </Link>
-          <Link
-            href={"#about"}
-            className="text-sm translate-y-0 hover:-translate-y-1 transition-all duration-300"
-          >
-            About
+            Design
           </Link>
           <Link
             href={"#works"}
             className="text-sm translate-y-0 hover:-translate-y-1 transition-all duration-300"
           >
             Works
+          </Link>
+          <Link
+            href={"/contact"}
+            className="text-sm translate-y-0 hover:-translate-y-1 transition-all duration-300"
+          >
+            Contact
           </Link>
           <Link
             href={"/"}
