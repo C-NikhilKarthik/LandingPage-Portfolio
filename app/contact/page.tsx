@@ -111,7 +111,7 @@ export default function Page() {
       </div>
       <div className="w-full relative">
         <nav
-          className={`w-full p-4 md:px-10 lg:px-20 xl:px-44 z-20 transition-all ${
+          className={`w-full p-4 md:px-10 lg:px-20 xl:px-24 z-20 transition-all ${
             open ? "text-white" : "text-black"
           } flex justify-between items-center absolute top-0 left-0`}
         >
@@ -155,7 +155,7 @@ export default function Page() {
             <GiHamburgerMenu />
           </div>
         </nav>
-        <div className="p-4 w-full flex flex-col h-2/3 justify-end items-center">
+        <div className="px-4 w-full flex flex-col h-2/3 md:h-3/4 justify-end items-center">
           <div className="flex-1 relative w-full flex justify-center">
             <div className="flex flex-col absolute items-center top-24">
               <div className="relative title">
