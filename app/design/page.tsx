@@ -1,7 +1,7 @@
 "use client";
 import Footer from "@/components/Footer";
 import Link from "next/link";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
 
 const selectedProjects = [
@@ -62,6 +62,8 @@ const selectedProjects = [
 ];
 
 export default function Page() {
+  const [open, setOpen] = useState<boolean>(false);
+
   useEffect(() => {
     const isAppleDevice =
       /iPad|iPhone|iPod/.test(navigator.userAgent) && !(window as any).MSStream;
@@ -77,7 +79,12 @@ export default function Page() {
   return (
     <div className="w-full">
       <div className="bg-white flex relative flex-col">
-        <nav className="w-full p-4 md:px-10 lg:px-20 xl:px-44 z-10 text-black flex justify-between items-center absolute top-0 left-0">
+        <nav
+          className={`w-full p-4 md:px-10 lg:px-20 xl:px-44 z-20 transition-all ${
+            open ? "text-white" : "text-black"
+          } flex justify-between items-center absolute top-0 left-0`}
+        >
+          {" "}
           <Link href={"/"} className="text-2xl font-semibold">
             Alex Smith
           </Link>
@@ -89,7 +96,7 @@ export default function Page() {
               Design
             </Link>
             <Link
-              href={"#works"}
+              href={"/#works"}
               className="text-sm translate-y-0 hover:-translate-y-1 transition-all duration-300"
             >
               Works
@@ -107,7 +114,12 @@ export default function Page() {
               hello@aslex.en
             </Link>
           </div>
-          <div className="text-black text-xl flex md:hidden">
+          <div
+            onClick={() => setOpen(!open)}
+            className={`transition-all text-xl cursor-pointer flex md:hidden ${
+              open ? "text-white" : "text-black"
+            }`}
+          >
             <GiHamburgerMenu />
           </div>
         </nav>
@@ -141,6 +153,30 @@ export default function Page() {
                 />
               </div>
             ))}
+          </div>
+        </div>
+      </div>
+
+      <div
+        className={`fixed top-0 left-0 p-4 z-[10] w-full h-screen bg-[rgba(0,0,0,0.88)] backdrop-blur transition-all duration-500 flex flex-col ${
+          open ? "translate-x-0" : "-translate-x-full"
+        }`}
+      >
+        <div className="w-full text-white p-4 flex justify-center sf-pro gap-4 h-full flex-col items-center">
+          <Link href={"/design"} className="text-xl">
+            Design
+          </Link>
+          <Link href={"/#works"} className="text-xl">
+            Works
+          </Link>
+          <Link href={"/contact"} className="text-xl">
+            Contact
+          </Link>
+        </div>
+
+        <div className="absolute bottom-4 w-full left-0 p-4 flex justify-center">
+          <div className="text-sm p-4 bg-white font-bold text-black hover:px-8 hover:shadow-2xl transition-all rounded duration-300">
+            hello@aslex.en
           </div>
         </div>
       </div>

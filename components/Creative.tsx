@@ -52,13 +52,13 @@ export default function Creative() {
       >
         <span
           id="creative"
-          className="text-[clamp(4.4rem,16dvh,10rem)] leading-[1.1cap] font-bold"
+          className="text-[clamp(4.4rem,6dvh,10rem)] md:text-[clamp(4.4rem,10dvh,10rem)] lg:text-[clamp(4.4rem,16dvh,10rem)] leading-[1.1cap] font-bold"
         >
           Creative
         </span>
         <span
           id="developer"
-          className="text-[clamp(4.4rem,16dvh,10rem)] leading-[1.1cap] font-bold"
+          className="text-[clamp(4.4rem,6dvh,10rem)] md:text-[clamp(4.4rem,10dvh,10rem)] lg:text-[clamp(4.4rem,16dvh,10rem)] leading-[1.1cap] font-bold"
         >
           Developer
         </span>
